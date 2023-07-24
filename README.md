@@ -1,4 +1,5 @@
 Requirements: Part 1
+
 1.) When the application loads, print the text, "Press any key to start the game."
 2.) When the user presses the key, your code will randomly place two different ships in two separate locations on the board. Each ship is only 1 unit long (In the real game ships are 2+ in length).
 3.) The prompt will then say, "Enter a location to strike ie 'A2' "
@@ -10,6 +11,7 @@ Requirements: Part 1
 
 
 Requirements: Part 2
+
 Only go to this step when you have successfully finished part 1.
 
 Now we are going to make the game a little more realistic.
@@ -28,7 +30,8 @@ Now we are going to make the game a little more realistic.
 7.) The game works as before, except now, all ships must be destroyed to win
 
 
-Requirements: Part 3 (Optional, but will take your skills to a whole new level).
+Requirements: Part 3 
+(Optional, but will take your skills to a whole new level).
 Instead of just printing "hit" or "miss" when you take a turn, have a GUI-based grid appear in the terminal. Use "O" for your misses and use "X" for your hits. After every turn, the grid will reprint with the proper data.
 
 Requirements: Part 4 - Multiplayer (Optional)
