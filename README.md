@@ -31,10 +31,13 @@ Now we are going to make the game a little more realistic.
 
 
 Requirements: Part 3 
+
 (Optional, but will take your skills to a whole new level).
 Instead of just printing "hit" or "miss" when you take a turn, have a GUI-based grid appear in the terminal. Use "O" for your misses and use "X" for your hits. After every turn, the grid will reprint with the proper data.
 
-Requirements: Part 4 - Multiplayer (Optional)
+Requirements: Part 4 
+
+Multiplayer (Optional)
 Modify the game so you can play against the computer. When the game starts it will automatically position your ships. The computer will then position its own ships.
 
 After you attack and the regular printouts appear, the computer will then attack. It will tell you if you have been hit or missed. The game continues on until someone wins.
