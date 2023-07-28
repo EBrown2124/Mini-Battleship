@@ -1,43 +1,66 @@
-
 const rs = require('readline-sync');
+const start = rs.question('Press any key... ')
+const stirke = rs.question('Enter a location to strike ')
 
-let misses = [];
-let hits = [];
-let shipLoc = [];
-let attackLoc;
-let boradArr = [];
 
-const boradBuild = (size) => {
-  for(let i = 0; i < size; i++){
-    boradArr[i] = [];
-    for(let j = 0; j < size; j++){
-      let letters = ["a", "b", "c"];
-      let x = letters[Math.floor(Math.random() * 3 )];
-      let y = Math.floor(Math.random() * 3) + 1;
-      boradArr[i].push(`${x}${y}`.toUpperCase());
+const run = (stirke) => {
+  const alpha = 'abcdefghij'.toUpperCase()
+  let boradsize = 3;
+  let shipLoc = [];
+
+  shipLoc
+  let grid = []
+  let stirkeLoc = stirke;
+  
+  const random = (size) => {
+    return Math.floor(Math.random() *size.length);
+  }
+
+  const creatGrid = (size) => {
+    for (let i = 0; i < size; i++) {
+      grid[i]=[];
+      for (let j = 0; j < size; j++) {
+        grid[i].push(`${alpha[i]}${j + 1}`)
+      }
+    }
+    return grid
+  }
+  creatGrid(boradsize)
+  
+  
+  const exist = (ship, shipLoc) => {
+    if(!shipLoc.includes(ship)) {
+      shipLoc.push(ship);
+      return true
+    }else{
+      return false
     }
   }
-  return boradArr;z
-}
-
-const setShip = () => {
-  [1,2].forEach((item) => placeShip())
-}
-
-const placeShip = () => {
-  const place = boradArr.flat();
-  const x = Math.floor(Math.random() * place.length);
-  let ship = place[x];
-  return exist(ship,shipLoc);
-}
-
-const exist = (ship,shipLoc) => {
-  if(!shipLoc.includes(ship)){
-    shipLoc.push(ship);
-    return true
-  }else{
-    return false
+  
+  const place = () => {
+    const coords = grid.flat()
+    const loc = random(coords)
+    let ship = coords[loc]
+    return exist(ship,shipLoc)
   }
-}
+  place()
 
-console.log(placeShip());
+  const set = () => {
+    [1, 2].forEach((item) => place())
+  }
+  set()
+  
+  const hitMiss = () =>{
+    for (let i = 0; i < shipLoc.length; i++) {
+      shipLoc[i]
+      if(stirkeLoc === shipLoc[i]) {
+       console.log('hit');
+      }else{
+        console.log('miss')
+      }
+    }
+  }  
+  hitMiss(stirkeLoc)
+  }
+
+  console.log(run(stirke))
