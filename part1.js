@@ -1,7 +1,9 @@
-// const rs = require('readline-sync');
+const rs = require('readline-sync');
 
-// const start = rs.keyIn('Press any key... ')
-// const stirke = rs.question('Enter a location to strike ')
+const start = rs.keyIn('Press any key... ')
+
+
+const stirke = rs.question('Enter a location to strike ')
 const createGrid = () => {
   const alpha = 'abcdefghij';
   const borad = [];
@@ -14,42 +16,26 @@ const createGrid = () => {
   return borad
 }
 
-
-const exist = (ship, shipLoc) => {
-  if(!shipLoc.includes(ship)) {
-    shipLoc.push(ship);
-    return true
-  }else{
-    return false
-  }
-}
-
 const rng = () =>{
   const coords = grid.flat()
   const loc = Math.floor(Math.random() * coords.length)
   let ship = coords[loc]
-  return exist(ship,shipLoc)
-}
-
-const set = () => {
-  [1,2].forEach((item) => rng())
+  return ship
 }
 
 const shipCheck = (grid, location) => {
   const spot = location.toLowerCase()
   if (grid === spot) {
-    return 'hit';
+    return console.log('hit');
   }
-  return 'miss';
+  return console.log('miss');
 }
 
 
 
 let grid = createGrid();
-let shipLoc = []
-let call = 'a1';
-let result = shipCheck(shipLoc, call );
-
-
-console.log(shipLoc);
-console.log(result);
+let emeny = rng()
+let call = stirke;
+let result = shipCheck(emeny, call);
+let missCount = 0;
+let hitCount = 0;
